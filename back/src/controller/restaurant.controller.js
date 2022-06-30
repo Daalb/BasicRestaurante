@@ -7,7 +7,8 @@ const getDishes = async(req,res,next) => {
         const result = await pool.query('SELECT * FROM dishes');
         res.status(200).json(result.rows)
     }catch(error){
-        console.log("Error getting all dishes",error.message)
+        console.log("Error trying to get all dishes",error.message);
+        next(error);
     }
 }
 
@@ -24,14 +25,21 @@ const getDish = async(req,res,next) => {
 
         return res.json(result.rows[0])
     }catch(error){
-        console.log("Error getting one dish",error.message)
+        console.log("Error trying to get one dish",error.message);
+        next(error);
     }
 }
 
 //*Create dish function
 const createDish = async(req,res,next) => {
     try{
-        res.send('Creating one dish');
+        const { name, description, price } = req.body;
+        const result = await pool.query('INSERT INTO dishes (name,description,price) VALUES ($1,$2,$3) RETURNING *', [
+            name,
+            description,
+            price
+        ]);
+        return res.json(result.rows[0]);
     }catch(error){
         console.log("Error creating a dish",error.message)
     }
@@ -56,7 +64,8 @@ const updateDish = async(req,res,next) => {
 
         res.json(result.rows[0])
     }catch(error){
-        console.log("Error updating one dish",error.message)
+        console.log("Error trying to update a dish",error)
+        next(error);
     }
 }
 
@@ -72,7 +81,8 @@ const deleteDish = async(req,res,next) => {
         })
         res.status(204);
     }catch(error){
-        console.log("Error deleting one dish",error.message)
+        console.log("Error trying to delete one dish",error.message);
+        next(error);
     }
 }
 

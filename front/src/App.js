@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+//*Libraries
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Container } from "@mui/material";
+
+
+//*Components
+import DishesForm from "./components/DishesForm";
+import DishesList from "./components/DishesList";
+import Header from "./components/Header";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Container>
+        <Routes>
+          <Route index path="/" element={<DishesList />} />
+          <Route path="/dish/new" element={<DishesForm />} />
+          <Route path="/dish/:id/edit" element={<DishesForm />} />
+        </Routes>
+      </Container>
+    </BrowserRouter>
   );
 }
 
