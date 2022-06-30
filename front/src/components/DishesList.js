@@ -61,14 +61,14 @@ export default function DishesList() {
                         <div>
                             <Button
                                 variant="contained"
-                                color="inherit"
+                                color="success"
                                 onClick={() => navigate(`/dish/${d.id}/edit`)}
                             >
                                 Editar
                             </Button>
                             <Button
                                 variant="contained"
-                                color="warning"
+                                color="error"
                                 onClick={() => deleteDish(d.id)}
                                 style={{ marginLeft: ".5rem" }}
                             >
