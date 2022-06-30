@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/https://github.com/Daalb/BasicRestaurante/static/css/main.e60ac75a.css",
+    "main.js": "/https://github.com/Daalb/BasicRestaurante/static/js/main.7c19785e.js",
+    "static/js/787.71df535f.chunk.js": "/https://github.com/Daalb/BasicRestaurante/static/js/787.71df535f.chunk.js",
+    "index.html": "/https://github.com/Daalb/BasicRestaurante/index.html",
+    "main.e60ac75a.css.map": "/https://github.com/Daalb/BasicRestaurante/static/css/main.e60ac75a.css.map",
+    "main.7c19785e.js.map": "/https://github.com/Daalb/BasicRestaurante/static/js/main.7c19785e.js.map",
+    "787.71df535f.chunk.js.map": "/https://github.com/Daalb/BasicRestaurante/static/js/787.71df535f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e60ac75a.css",
+    "static/js/main.7c19785e.js"
+  ]
+}
