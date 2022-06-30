@@ -79,7 +79,7 @@ const deleteDish = async(req,res,next) => {
         if(result.rowCount === 0) return res.status(400).json({
             message: "Dish not found"
         })
-        res.status(204);
+        return res.sendStatus(204);
     }catch(error){
         console.log("Error trying to delete one dish",error.message);
         next(error);

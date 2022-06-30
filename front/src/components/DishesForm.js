@@ -106,11 +106,11 @@ export default function DishesForm() {
                                 inputProps={{ style: { color: "white" } }}
                                 InputLabelProps={{ style: { color: "white" } }}
                             />
+
                             <TextField
                                 variant="filled"
+                                label="Ingrese precio"
                                 type="number"
-                                label="Ingrese un precio"
-                                multiline
                                 sx={{
                                     display: "block",
                                     margin: ".5rem 0",
@@ -118,9 +118,11 @@ export default function DishesForm() {
                                 name="price"
                                 onChange={handleChange}
                                 value={dish.price}
-                                inputProps={{ style: { color: "white" } }}
+                                inputProps={{ style: { color: "white" }}}
+                                
                                 InputLabelProps={{ style: { color: "white" } }}
                             />
+
                             <TextField
                                 variant="outlined"
                                 label="Ingrese una descripcon"
@@ -141,12 +143,12 @@ export default function DishesForm() {
                                 type="submit"
                                 variant="contained"
                                 color="primary"
-                                disabled={!dish.name || !dish.description}
+                                disabled={!dish.name || !dish.description || !dish.price}
                             >
                                 {loading ? (
-                                <CircularProgress color="inherit" size={25} />
-                                ) : (
-                                "Save"
+                                    <CircularProgress color="inherit" size={25} />
+                                    ) : (
+                                    "Guardar"
                                 )}
                             </Button>
                         </form>

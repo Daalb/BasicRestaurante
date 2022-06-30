@@ -62,7 +62,7 @@ export default function DishesList() {
                             <Button
                                 variant="contained"
                                 color="inherit"
-                                onClick={() => navigate(`/restaurant/${d.id}/edit`)}
+                                onClick={() => navigate(`/dish/${d.id}/edit`)}
                             >
                                 Editar
                             </Button>
